@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <string>
 #include "Student.h"
+#include "SortTestHelper.h"
 
 using namespace std;
 
@@ -25,33 +26,40 @@ void selectionSort(T arr[], int n)
 
 int main()
 {
-  int a[10] = {1, 3, 5, 10, 9, 7, 2, 6, 8, 4};
-  selectionSort(a, 10);
+  int n = 100;
+  int *arr = SortTestHelper::generateRandomArray(n, 0, n);
+  selectionSort(arr, n);
+  SortTestHelper::printArray(arr, n);
 
-  float b[5] = {1, 4.2, 3.2, 5.55, 2.111};
-  selectionSort(b, 5);
+  delete[] arr;       //将空间释放出来
 
-  string c[5] = {"D", "C", "F", "A", "P"};
-  selectionSort(c, 5);
+  // int a[10] = {1, 3, 5, 10, 9, 7, 2, 6, 8, 4};
+  // selectionSort(a, 10);
 
-  Student d[5] = {{"D", 90}, {"C", 100}, {"F", 90}, {"A", 95}, {"P", 64}};
-  selectionSort(d, 5);
+  // float b[5] = {1, 4.2, 3.2, 5.55, 2.111};
+  // selectionSort(b, 5);
 
-  for (int i = 0; i < 10; i++)
-    cout << a[i] << " ";
-  cout << endl;
+  // string c[5] = {"D", "C", "F", "A", "P"};
+  // selectionSort(c, 5);
 
-  for (int i = 0; i < 5; i++)
-    cout << b[i] << " ";
-  cout << endl;
+  // Student d[5] = {{"D", 90}, {"C", 100}, {"F", 90}, {"A", 95}, {"P", 64}};
+  // selectionSort(d, 5);
 
-  for (int i = 0; i < 5; i++)
-    cout << c[i] << " ";
-  cout << endl;
+  // for (int i = 0; i < 10; i++)
+  //   cout << a[i] << " ";
+  // cout << endl;
 
-  for (int i = 0; i < 5; i++)
-    cout << d[i] << " ";
-  cout << endl;
+  // for (int i = 0; i < 5; i++)
+  //   cout << b[i] << " ";
+  // cout << endl;
+
+  // for (int i = 0; i < 5; i++)
+  //   cout << c[i] << " ";
+  // cout << endl;
+
+  // for (int i = 0; i < 5; i++)
+  //   cout << d[i] << " ";
+  // cout << endl;
 
   return 0;
 }
