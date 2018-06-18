@@ -1,9 +1,12 @@
 #include <iostream>
 #include <algorithm>
+#include <string>
+#include "Student.h"
 
 using namespace std;
 
-void selectionSort(int arr[], int n)
+template <typename T> //声明成模板函数
+void selectionSort(T arr[], int n)
 {
   for (int i = 0; i < n; i++)
   {
@@ -23,12 +26,31 @@ void selectionSort(int arr[], int n)
 int main()
 {
   int a[10] = {1, 3, 5, 10, 9, 7, 2, 6, 8, 4};
-
   selectionSort(a, 10);
+
+  float b[5] = {1, 4.2, 3.2, 5.55, 2.111};
+  selectionSort(b, 5);
+
+  string c[5] = {"D", "C", "F", "A", "P"};
+  selectionSort(c, 5);
+
+  Student d[5] = {{"D", 90}, {"C", 100}, {"F", 90}, {"A", 95}, {"P", 64}};
+  selectionSort(d, 5);
 
   for (int i = 0; i < 10; i++)
     cout << a[i] << " ";
+  cout << endl;
 
+  for (int i = 0; i < 5; i++)
+    cout << b[i] << " ";
+  cout << endl;
+
+  for (int i = 0; i < 5; i++)
+    cout << c[i] << " ";
+  cout << endl;
+
+  for (int i = 0; i < 5; i++)
+    cout << d[i] << " ";
   cout << endl;
 
   return 0;
